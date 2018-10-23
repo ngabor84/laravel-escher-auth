@@ -6,7 +6,7 @@ class LaravelServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->publishes([$this->configPath() => config_path('escher.php')]);
+        $this->publishes([realpath($this->configPath()) => config_path('escher.php')]);
         $this->mergeConfigFrom($this->configPath(), 'escher');
         $this->setMiddlewares();
     }
