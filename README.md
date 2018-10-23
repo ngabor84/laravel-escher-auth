@@ -30,9 +30,25 @@ You should now have a config/escher.php file that allows you to configure the ba
 ## Usage with Lumen
 Add the following snippet to the bootstrap/app.php file under the providers section as follows:
 ```php
-// Uncomment this line
-$app->register(App\Providers\AuthServiceProvider::class);
+// Add this line to bootstrap/app.php
+$app->register(ngabor84\Middleware\Auth\Escher\Providers\LumenServiceProvider::class);
 
-// Add this line
-$app->register(ngabor84\Middleware\Auth\Escher\Providers\LaravelServiceProvider::class);
+$app->configure('escher');
+```
+
+Create a config directory (if it's not exist), and create an escher.php in it with the plugin configuration like this:
+```php
+<?php
+
+return [
+    'credentialScope' => 'test/scope',
+    'vendorKey' => 'EMS',
+    'algoPrefix' => 'EMS',
+    'hashAlgo' => 'SHA256',
+    'authHeaderKey' => 'X-EMS-Auth',
+    'dateHeaderKey' => 'X-EMS-Date',
+    'clockSkew' => '300',
+    'keyId' => 'test_key',
+    'secret' => 'test_secret',
+];
 ```

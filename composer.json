@@ -40,7 +40,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Middleware\\Auth\\Escher\\Providers\\ServiceProvider"
+                "Middleware\\Auth\\Escher\\Providers\\LaravelServiceProvider"
             ]
         }
     },
