@@ -1,3 +1,5 @@
+[ ![Codeship Status for ngabor84/laravel-escher-auth](https://app.codeship.com/projects/dc3aadc0-b8f0-0136-f2db-52c8808a0161/status?branch=master)](https://app.codeship.com/projects/312071)
+
 # Escher Auth Middleware
 Escher authentication middleware for the Laravel and Lumen framework.
 
