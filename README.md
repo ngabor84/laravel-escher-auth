@@ -1,4 +1,5 @@
 [ ![Codeship Status for ngabor84/laravel-escher-auth](https://app.codeship.com/projects/dc3aadc0-b8f0-0136-f2db-52c8808a0161/status?branch=master)](https://app.codeship.com/projects/312071)
+[![GitHub license](https://img.shields.io/github/license/ngabor84/laravel-escher-auth.svg)](https://github.com/ngabor84/laravel-escher-auth/blob/master/LICENSE)
 
 # Escher Auth Middleware
 Escher authentication middleware for the Laravel and Lumen framework.
@@ -38,14 +39,14 @@ $app->configure('escher');
 Create a config directory (if it's not exist), and create an escher.php in it with the plugin configuration like this:
 ```php
 return [
-    'credentialScope' => 'test/scope',
-    'vendorKey' => 'EMS',
-    'algoPrefix' => 'EMS',
     'hashAlgo' => 'SHA256',
+    'algoPrefix' => 'EMS',
+    'vendorKey' => 'EMS',
     'authHeaderKey' => 'X-EMS-Auth',
     'dateHeaderKey' => 'X-EMS-Date',
     'clockSkew' => '300',
-    'keyId' => 'test_key',
-    'secret' => 'test_secret',
+    'credentialScope' => env('ESCHER_CREDENTIAL_SCOPE'),
+    'keyId' => env('ESCHER_KEY'),
+    'secret' => env('ESCHER_SECRET'),
 ];
 ```
