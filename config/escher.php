@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'credentialScope' => 'credential/scope/ems_request',
-    'vendorKey' => 'EMS',
-    'algoPrefix' => 'EMS',
     'hashAlgo' => 'SHA256',
+    'algoPrefix' => 'EMS',
+    'vendorKey' => 'EMS',
     'authHeaderKey' => 'X-EMS-Auth',
     'dateHeaderKey' => 'X-EMS-Date',
     'clockSkew' => '300',
-    'keyId' => '',
-    'secret' => '',
+    'credentialScope' => env('ESCHER_CREDENTIAL_SCOPE'),
+    'keyId' => env('ESCHER_KEY'),
+    'secret' => env('ESCHER_SECRET'),
 ];
