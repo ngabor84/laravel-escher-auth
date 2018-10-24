@@ -17,13 +17,12 @@ Add the service provider to the providers array in the config/app.php config fil
 ```php
 'providers' => [
     ...
-    ngabor84\Middleware\Auth\Escher\Providers\LaravelServiceProvider::class,
+    \Middleware\Auth\Escher\Providers\LaravelServiceProvider::class,
 ]
 ```
 Run the following command to publish the package config file:
-
 ```bash
-php artisan vendor:publish --provider="ngabor84\Middleware\Auth\Escher\Providers\LaravelServiceProvider"
+php artisan vendor:publish --provider="Middleware\Auth\Escher\Providers\LaravelServiceProvider"
 ```
 You should now have a config/escher.php file that allows you to configure the basics of this package.
 
@@ -31,15 +30,13 @@ You should now have a config/escher.php file that allows you to configure the ba
 Add the following snippet to the bootstrap/app.php file under the providers section as follows:
 ```php
 // Add this line to bootstrap/app.php
-$app->register(ngabor84\Middleware\Auth\Escher\Providers\LumenServiceProvider::class);
+$app->register(\Middleware\Auth\Escher\Providers\LumenServiceProvider::class);
 
 $app->configure('escher');
 ```
 
 Create a config directory (if it's not exist), and create an escher.php in it with the plugin configuration like this:
 ```php
-<?php
-
 return [
     'credentialScope' => 'test/scope',
     'vendorKey' => 'EMS',
