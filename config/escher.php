@@ -8,4 +8,6 @@ return [
     'authHeaderKey' => 'X-EMS-Auth',
     'dateHeaderKey' => 'X-EMS-Date',
     'clockSkew' => '300',
+    'keyId' => '',
+    'secret' => '',
 ];
