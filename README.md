@@ -30,9 +30,8 @@ You should now have a config/escher.php file that allows you to configure the ba
 ## Usage with Lumen
 Add the following snippet to the bootstrap/app.php file under the providers section as follows:
 ```php
-// Add this line to bootstrap/app.php
 $app->register(\Middleware\Auth\Escher\Providers\LumenServiceProvider::class);
-
+...
 $app->configure('escher');
 ```
 
