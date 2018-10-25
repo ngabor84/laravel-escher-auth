@@ -16,7 +16,8 @@
         "illuminate/support": "^5.7",
         "symfony/http-foundation": "^4.1",
         "symfony/http-kernel": "^4.1",
-        "emartech/escher": "^1.1"
+        "emartech/escher": "^1.1",
+        "ext-json": "*"
     },
     "require-dev": {
         "laravel/framework": "^5.7",

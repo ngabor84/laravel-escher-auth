@@ -18,6 +18,8 @@
         <exclude name="SlevomatCodingStandard.Classes.TraitUseSpacing.IncorrectLinesCountBeforeFirstUse"/>
         <exclude name="SlevomatCodingStandard.Classes.TraitUseSpacing.IncorrectLinesCountAfterLastUse"/>
         <exclude name="SlevomatCodingStandard.Classes.TraitUseDeclaration.MultipleTraitsPerDeclaration"/>
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants.NonFullyQualified"/>
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix"/>
     </rule>
     <rule ref="PSR12">
 

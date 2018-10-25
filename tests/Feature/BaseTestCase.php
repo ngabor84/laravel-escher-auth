@@ -16,8 +16,7 @@ abstract class BaseTestCase extends \Orchestra\Testbench\TestCase
 
         $app['config']['escher'] = [
             'credentialScope' => 'eu/packaging/ems_request',
-            'keyId' => 'testKey',
-            'secret' => 'testSecret',
+            'keyDB' => '{"testKey": "testSecret"}',
             'hashAlgo' => 'SHA256',
             'algoPrefix' => 'EMS',
             'vendorKey' => 'EMS',

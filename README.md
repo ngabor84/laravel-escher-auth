@@ -45,7 +45,6 @@ return [
     'dateHeaderKey' => 'X-EMS-Date',
     'clockSkew' => '300',
     'credentialScope' => env('ESCHER_CREDENTIAL_SCOPE'),
-    'keyId' => env('ESCHER_KEY'),
-    'secret' => env('ESCHER_SECRET'),
+    'keyDB' => env('ESCHER_KEY_DB'),
 ];
 ```
