@@ -49,7 +49,12 @@
         "analyze": "./vendor/bin/phpstan analyze -l 5 src/",
         "check-style": "./vendor/bin/phpcs --standard=ruleset.xml -ps --colors src/",
         "fix-style": "./vendor/bin/phpcbf -p --standard=ruleset.xml src/",
-        "test": "./vendor/bin/phpunit -c phpunit.xml"
+        "test": "./vendor/bin/phpunit -c phpunit.xml",
+        "cat": [
+            "@check-style",
+            "@analyze",
+            "@test"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true
