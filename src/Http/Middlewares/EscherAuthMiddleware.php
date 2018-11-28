@@ -6,7 +6,7 @@ use ArrayObject;
 use Closure;
 use Escher\Escher;
 use Illuminate\Http\Request;
-use Middleware\Auth\Escher\Events\EshcerAuthFailure;
+use Middleware\Auth\Escher\Events\EscherAuthFailure;
 use Middleware\Auth\Escher\Exceptions\JsonException;
 use Throwable;
 
@@ -28,7 +28,7 @@ class EscherAuthMiddleware
         try {
             $this->escher->authenticate($keyDB, $serverVars);
         } catch (Throwable $e) {
-            event(new EshcerAuthFailure($request));
+            event(new EscherAuthFailure($request));
 
             return response()->json(['error' => $e->getMessage()], 401);
         }

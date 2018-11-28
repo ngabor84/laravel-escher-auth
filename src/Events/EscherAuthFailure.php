@@ -4,7 +4,7 @@ namespace Middleware\Auth\Escher\Events;
 
 use Illuminate\Http\Request;
 
-class EshcerAuthFailure
+class EscherAuthFailure
 {
     /**
      * @var Request

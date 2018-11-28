@@ -4,7 +4,7 @@ namespace Middleware\Auth\Escher\Tests\Feature;
 
 use Escher\Escher;
 use Illuminate\Support\Facades\Event;
-use Middleware\Auth\Escher\Events\EshcerAuthFailure;
+use Middleware\Auth\Escher\Events\EscherAuthFailure;
 
 class EscherAuthMiddlewareTest extends BaseTestCase
 {
@@ -51,7 +51,7 @@ class EscherAuthMiddlewareTest extends BaseTestCase
         $headers = $escher->signRequest('invalid_key', 'invalid_secret', 'get', route('api.protected'), '');
         $this->get('api/protected', $headers);
 
-        Event::assertDispatched(EshcerAuthFailure::class);
+        Event::assertDispatched(EscherAuthFailure::class);
     }
 
     /**
@@ -65,7 +65,7 @@ class EscherAuthMiddlewareTest extends BaseTestCase
         $headers = $escher->signRequest('invalid_key', 'invalid_secret', 'get', route('api.protected'), '');
         $this->get('api/protected', $headers);
 
-        Event::assertDispatched(EshcerAuthFailure::class, function(EshcerAuthFailure $event) {
+        Event::assertDispatched(EscherAuthFailure::class, function(EscherAuthFailure $event) {
             return $event->getRequest() === request();
         });
     }
