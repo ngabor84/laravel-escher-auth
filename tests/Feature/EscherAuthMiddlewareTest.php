@@ -81,4 +81,18 @@ class EscherAuthMiddlewareTest extends BaseTestCase
 
         $this->assertEquals(200, $response->getStatusCode());
     }
+
+    /**
+     * @test
+     */
+    public function protectedPostEndpointReturnSuccessfulResponseWhenRequestHasValidEscherSignature(): void
+    {
+        $escher = app()->get(Escher::class);
+        $payload = ['test' => 'test'];
+        $jsonPayload = json_encode($payload);
+        $headers = $escher->signRequest('testKey', 'testSecret', 'POST', route('api.protected.post'), $jsonPayload);
+        $response = $this->json('POST', 'api/protected/post', $payload, $headers);
+
+        $this->assertEquals(200, $response->getStatusCode());
+    }
 }

@@ -26,7 +26,7 @@ class EscherAuthMiddleware
         $keyDB = $this->keyDB();
 
         try {
-            $this->escher->authenticate($keyDB, $serverVars);
+            $this->escher->authenticate($keyDB, $serverVars, $request->getContent());
         } catch (Throwable $e) {
             event(new EscherAuthFailure($request));
 

@@ -52,6 +52,11 @@ abstract class BaseTestCase extends \Orchestra\Testbench\TestCase
                 'uses' => static function () {
                     return 'pong';
                 }
+            ]);$router->post('api/protected/post', [
+                'as' => 'api.protected.post',
+                'uses' => static function () {
+                    return 'pong';
+                }
             ]);
         });
     }
