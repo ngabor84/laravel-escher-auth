@@ -7,6 +7,7 @@ use Closure;
 use Escher\Escher;
 use Illuminate\Http\Request;
 use Middleware\Auth\Escher\Events\EscherAuthFailure;
+use Middleware\Auth\Escher\Exceptions\InvalidConfigException;
 use Middleware\Auth\Escher\Exceptions\JsonException;
 use Throwable;
 
@@ -39,6 +40,11 @@ class EscherAuthMiddleware
     private function keyDB(): ArrayObject
     {
         $keyDBJson = config('escher.keyDB', '{}');
+
+        if ($keyDBJson === null) {
+            throw new InvalidConfigException('Invalid KeyDB configuration');
+        }
+
         $keyDB = json_decode($keyDBJson, true);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
