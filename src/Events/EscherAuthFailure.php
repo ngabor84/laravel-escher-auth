@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 namespace Middleware\Auth\Escher\Events;
 
@@ -10,7 +10,6 @@ class EscherAuthFailure
      * @var Request
      */
     private $request;
-
 
     public function __construct(Request $request)
     {
