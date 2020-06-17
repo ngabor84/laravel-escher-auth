@@ -13,18 +13,18 @@
     ],
     "require": {
         "php": ">=7.3",
-        "illuminate/support": "^6.6",
-        "symfony/http-foundation": "^4.4",
-        "symfony/http-kernel": "^4.4",
+        "illuminate/support": "^7.16",
+        "symfony/http-foundation": "^5.1",
+        "symfony/http-kernel": "^5.1",
         "emartech/escher": "^1.2",
         "ext-json": "*"
     },
     "require-dev": {
-        "laravel/framework": "^6.6",
-        "laravel/lumen-framework": "^6.2",
-        "phpunit/phpunit": "^8.4",
-        "orchestra/testbench": "^4.4",
-        "nunomaduro/phpinsights": "^1.11"
+        "laravel/framework": "^7.16",
+        "laravel/lumen-framework": "^7.1",
+        "phpunit/phpunit": "^9.2",
+        "orchestra/testbench": "^5.3",
+        "nunomaduro/phpinsights": "^1.14"
     },
     "autoload": {
         "psr-4": {
