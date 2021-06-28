@@ -1,4 +1,3 @@
-[ ![Codeship Status for ngabor84/laravel-escher-auth](https://app.codeship.com/projects/dc3aadc0-b8f0-0136-f2db-52c8808a0161/status?branch=master)](https://app.codeship.com/projects/312071)
 [![GitHub license](https://img.shields.io/github/license/ngabor84/laravel-escher-auth.svg)](https://github.com/ngabor84/laravel-escher-auth/blob/master/LICENSE)
 
 # Escher Auth Middleware
