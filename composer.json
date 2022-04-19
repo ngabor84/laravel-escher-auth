@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": "^7.3|^8.0",
-        "firebase/php-jwt": "^v5.2.1",
+        "firebase/php-jwt": "^v6.0.0",
         "illuminate/support": "^v8.41",
         "symfony/http-foundation": "^v5.2.8",
         "symfony/http-kernel": "^v5.2.8",
