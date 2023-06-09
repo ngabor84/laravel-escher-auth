@@ -13,14 +13,13 @@ use Throwable;
 
 class EscherAuthMiddleware
 {
-    private $escher;
+    private Escher $escher;
 
     public function __construct(Escher $escher)
     {
         $this->escher = $escher;
     }
 
-    // phpcs:disable SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingReturnTypeHint
     public function handle(Request $request, Closure $next)
     {
         $serverVars = $request->server->all();
@@ -53,5 +52,4 @@ class EscherAuthMiddleware
 
         return new ArrayObject($keyDB);
     }
-    // phpcs:enable
 }
