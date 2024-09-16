@@ -17,7 +17,7 @@
         "illuminate/support": "^v10.13",
         "symfony/http-foundation": "^v6.3",
         "symfony/http-kernel": "^v6.3",
-        "emartech/escher": "^3.0",
+        "emartech/escher": "^4.0",
         "ext-json": "*"
     },
     "require-dev": {
