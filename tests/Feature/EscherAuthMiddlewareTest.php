@@ -5,12 +5,11 @@ namespace Middleware\Auth\Escher\Tests\Feature;
 use Escher\Escher;
 use Illuminate\Support\Facades\Event;
 use Middleware\Auth\Escher\Events\EscherAuthFailure;
+use PHPUnit\Framework\Attributes\Test;
 
 class EscherAuthMiddlewareTest extends BaseTestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function unprotectedEndpointReturnSuccessfulResponseWhenRequestDoesNotHaveEscherSignature(): void
     {
         $response = $this->get('api/unprotected');
@@ -18,9 +17,7 @@ class EscherAuthMiddlewareTest extends BaseTestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function protectedEndpointReturnWithStatus401WhenRequestDoesNotHaveEscherSignature(): void
     {
         $response = $this->get('api/protected');
@@ -28,9 +25,7 @@ class EscherAuthMiddlewareTest extends BaseTestCase
         $this->assertEquals(401, $response->getStatusCode());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function protectedEndpointReturnWithStatus401WhenRequestHasInValidEscherSignature(): void
     {
         $escher = app()->get(Escher::class);
@@ -40,9 +35,7 @@ class EscherAuthMiddlewareTest extends BaseTestCase
         $this->assertEquals(401, $response->getStatusCode());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function protectedEndpointDispatchEscherAuthFailureEventWhenRequestHasInValidEscherSignature(): void
     {
         Event::fake();
@@ -54,9 +47,7 @@ class EscherAuthMiddlewareTest extends BaseTestCase
         Event::assertDispatched(EscherAuthFailure::class);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function protectedEndpointDispatchEscherAuthFailureEventWithActualRequestWhenRequestHasInValidEscherSignature(): void
     {
         Event::fake();
@@ -70,9 +61,7 @@ class EscherAuthMiddlewareTest extends BaseTestCase
         });
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function protectedEndpointReturnSuccessfulResponseWhenRequestHasValidEscherSignature(): void
     {
         $escher = app()->get(Escher::class);
@@ -82,9 +71,7 @@ class EscherAuthMiddlewareTest extends BaseTestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function protectedPostEndpointReturnSuccessfulResponseWhenRequestHasValidEscherSignature(): void
     {
         $escher = app()->get(Escher::class);

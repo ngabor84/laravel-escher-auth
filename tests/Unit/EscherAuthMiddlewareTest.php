@@ -9,12 +9,11 @@ use Middleware\Auth\Escher\Exceptions\InvalidConfigException;
 use Middleware\Auth\Escher\Exceptions\JsonException;
 use Middleware\Auth\Escher\Http\Middlewares\EscherAuthMiddleware;
 use Middleware\Auth\Escher\Tests\Feature\BaseTestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class EscherAuthMiddlewareTest extends BaseTestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function handle_escherKeyDBIsEmpty_throwsInvalidConfigException(): void
     {
         config(['escher.keyDB' => null]);
@@ -29,9 +28,7 @@ class EscherAuthMiddlewareTest extends BaseTestCase
         $escherMiddleware->handle($request, $next);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function handle_escherKeyDBIsEmptyString_throwsJsonException(): void
     {
         config(['escher.keyDB' => '']);
@@ -46,9 +43,7 @@ class EscherAuthMiddlewareTest extends BaseTestCase
         $escherMiddleware->handle($request, $next);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function handle_escherKeyDBIsNotValidJson_throwsJsonException(): void
     {
         config(['escher.keyDB' => 'invalid string']);
